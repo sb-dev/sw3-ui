@@ -1,0 +1,80 @@
+.place-left {
+  left: 0;
+}
+
+.place-right {
+  right: 0;
+}
+
+.place-bottom {
+  bottom: 0;
+}
+
+.place-top {
+  top: 0;
+}
+
+.sw-bold {
+  font-weight: $font-weight-bold;
+}
+
+/*
+ * Extra small devices
+ */
+@media (max-width: 48em) {
+  .hidden-xs {
+    display: none;
+  }
+}
+
+/*
+ * Small devices
+ */
+@media (min-width: 48em) and (max-width: 62em) {
+  .hidden-sm {
+    display: none;
+  }
+}
+
+@media (min-width: 48em){
+  .hidden-sm-up {
+    display: none;
+  }
+}
+
+@media (max-width: 62em) {
+  .hidden-sm-down {
+    display: none;
+  }
+}
+
+/*
+ * Medium devices
+ */
+@media (min-width: 62em) and (max-width: 75em) {
+  .hidden-md {
+    display: none;
+  }
+}
+
+@media (min-width: 62em){
+  .hidden-md-up {
+    display: none;
+  }
+}
+
+@media (max-width: 75em) {
+  .hidden-md-down {
+    display: none;
+  }
+}
+
+/*
+ * Lagre devices
+ */
+@media (min-width: 75em) {
+  .hidden-lg {
+    display: none;
+  }
+}
+

@@ -29,6 +29,7 @@
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" default="true">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
+  <component name="ProjectTasksOptions" suppressed-tasks="SCSS;Babel" />
   <component name="RunManager">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
@@ -116,6 +117,9 @@
       <listeners />
       <method />
     </configuration>
+  </component>
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
   </component>
   <component name="masterDetails">
     <states>

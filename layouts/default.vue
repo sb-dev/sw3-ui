@@ -1,52 +1,109 @@
 <template>
-  <div>
-    <nuxt/>
+  <div v-bind:class="{ 'page--sidenav-opened': showSidenav }" class="page-wrapper">
+    <el-dialog
+      title="Your Basket"
+      custom-class="dialog"
+      :visible.sync="showBasketDialog"
+      size="small">
+      <SwBasket></SwBasket>
+    </el-dialog>
+
+    <div class="sidenav"></div>
+    <div class="overlay" v-on:click="showSidenav = false" v-bind:class="{ 'overlay--sidenav-opened': showSidenav }"></div>
+    <div class="page">
+      <SwHeader v-on:sidenav="openSidenav" v-on:dialog="openDialog"></SwHeader>
+      <nuxt/>
+    </div>
   </div>
 </template>
 
+<script>
+  import SwHeader from '~/components/Header.vue'
+  import SwBasket from '~/components/Basket.vue'
+
+  export default {
+    components: {
+      SwHeader,
+      SwBasket
+    },
+    data () {
+      return {
+        showSidenav: false,
+        showBasketDialog: false
+      }
+    },
+    methods: {
+      openSidenav () {
+        this.showSidenav = true
+      },
+      openDialog () {
+        this.showBasketDialog = true
+      }
+    }
+  }
+</script>
+
+<style src="element-ui/lib/theme-default/index.css"></style>
 <style>
-html {
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
+  @media (min-width: 64em) {
+    .container--row {
+      margin: 0 auto;
+      max-width: 73.125rem;
+      width: 100%;
+      padding: 0 0.9375rem
+    }
+  }
 
-*, *:before, *:after {
-  box-sizing: border-box;
-  margin: 0;
-}
+  .page-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
+  .page--sidenav-opened .sidenav {
+    width: 250px;
+  }
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
+  .page--sidenav-opened .page {
+    margin-left: 250px;
+  }
 
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
+  .page--sidenav-opened .overlay {
+    background-color: rgba(0,0,0,0.4);
+    transition: background-color 1s;
+  }
 
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
-}
+  .overlay {
+    position:fixed;
+    left: 0;
+    right: 0;
+    top:0;
+    bottom: 0;
+    background-color: transparent;
+    z-index: 1000;
+    display: none;
+    transition: background-color 1s ease;
+  }
+
+  .overlay--sidenav-opened {
+    display: block;
+  }
+
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1001;
+    top: 0;
+    left: 0;
+    background-color: #324157;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s;
+  }
+
+  .page {
+    position: relative;
+    transition: margin-left .5s;
+    width: 100%;
+  }
 </style>

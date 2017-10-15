@@ -1,0 +1,78 @@
+
+.nav--top-bar {
+  position: relative;
+  height: 4.625rem;
+  line-height: 4.625rem;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    li {
+      a {
+        color: $body-color;
+        padding: 0 0.625rem;
+      }
+    }
+  }
+
+  .name {
+    padding-left: 0;
+    a {
+      padding-left: 0;
+    }
+  }
+
+  .fa-2x{
+    position: relative;
+    top: 0.375rem;
+  }
+}
+
+.nav:before, .nav:after {
+  content: " ";
+  display: table;
+}
+
+.nav:after {
+  clear: both;
+}
+
+.nav__inner-container {
+  position: static;
+}
+
+.nav__section--left, .nav__section--left li {
+  float: left;
+}
+
+.nav__section--right, .nav__section--right li {
+  float: right;
+}
+
+.title-nav li {
+  padding: 0.625rem;
+  padding-top: 0!important;
+  padding-bottom: 0!important;
+
+  .name img {
+    position: relative;
+  }
+}
+
+.main-nav {
+  padding-left: 1.5625rem;
+
+  li {
+    padding: 0.625rem;
+    padding-top: 0!important;
+    padding-bottom: 0!important;
+  }
+
+  .el-input__inner {
+    height: 3.09375rem;
+  }
+}
+
+.basket-popper .el-button--primary {
+  width: 100%;
+}

@@ -18,8 +18,15 @@ module.exports = {
   */
   loading: { color: '#3B8070' },
   /*
+   ** Plugins
+   */
+  plugins: ['plugins/element-ui.js'],
+  /*
   ** Build configuration
   */
+  css: [
+    '@/assets/style/sw3.scss'
+  ],
   build: {
     /*
     ** Run ESLint on save
