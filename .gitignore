@@ -9,3 +9,8 @@ npm-debug.log
 
 # Nuxt generate
 dist
+
+# File-based project format:
+*.iws
+*.iml
+*.ipr
