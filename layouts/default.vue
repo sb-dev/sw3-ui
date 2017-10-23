@@ -8,10 +8,18 @@
       <SwBasket></SwBasket>
     </el-dialog>
 
+    <el-dialog
+      title="Join"
+      custom-class="dialog"
+      :visible.sync="showUserDialog"
+      size="small">
+      <SwJoin></SwJoin>
+    </el-dialog>
+
     <div class="sidenav"></div>
     <div class="overlay" v-on:click="showSidenav = false" v-bind:class="{ 'overlay--sidenav-opened': showSidenav }"></div>
     <div class="page">
-      <SwHeader v-on:sidenav="openSidenav" v-on:dialog="openDialog"></SwHeader>
+      <SwHeader v-on:sidenav="openSidenav" v-on:basketDialog="openDialog"></SwHeader>
       <nuxt/>
     </div>
   </div>
@@ -20,16 +28,19 @@
 <script>
   import SwHeader from '~/components/Header.vue'
   import SwBasket from '~/components/Basket.vue'
+  import SwJoin from '~/components/Join.vue'
 
   export default {
     components: {
       SwHeader,
-      SwBasket
+      SwBasket,
+      SwJoin
     },
     data () {
       return {
         showSidenav: false,
-        showBasketDialog: false
+        showBasketDialog: false,
+        showUserDialog: false
       }
     },
     methods: {

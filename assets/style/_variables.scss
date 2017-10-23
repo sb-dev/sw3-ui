@@ -30,18 +30,19 @@ $border-width: 1px !default;
  * Colors
  */
 
-$brand-primary: #3B8070;
+$brand-primary: #B52C24;
 
-$white:  #fff !default;
-$black:  #000 !default;
-$red:    #d9534f !default;
-$orange: #f0ad4e !default;
-$yellow: #ffd500 !default;
-$green:  #5cb85c !default;
-$blue:   #0275d8 !default;
-$teal:   #5bc0de !default;
-$pink:   #ff5b77 !default;
-$purple: #613d7c !default;
+$white:     #fff !default;
+$black:     #000 !default;
+$red:       #d9534f !default;
+$orange:    #f0ad4e !default;
+$yellow:    #ffd500 !default;
+$green:     #5cb85c !default;
+$blue:      #0275d8 !default;
+$blue-dark: #15212f !default;
+$teal:      #5bc0de !default;
+$pink:      #ff5b77 !default;
+$purple:    #613d7c !default;
 
 $gray-dark:                 #292b2c !default;
 $gray:                      #464a4c !default;
@@ -53,7 +54,7 @@ $gray-lightest:             #f7f7f9 !default;
  * Body
  */
 
-$body-bg:       $white !default;
+$body-bg:       #f5f4f2 !default;
 $body-color:    $gray-dark !default;
 $inverse-bg:    $gray-dark !default;
 $inverse-color: $gray-lighter !default;

@@ -1,0 +1,38 @@
+.inverted {
+  background-color: $blue-dark;
+  color: $white;
+}
+
+.art-work {
+  background: linear-gradient(141deg, #FFFBEC 0%, #FDA7A9 51%, #F5B485 75%);
+  //background: linear-gradient(230deg,#f5b485,#fda7a9,#fffbec);
+  //background: linear-gradient(230deg, #a24bcf, #4b79cf, #4bc5cf);
+  background-size: 300% 300%;
+  -webkit-animation: MoveBG 60s ease infinite;
+  -moz-animation: MoveBG 60s ease infinite;
+  -o-animation: MoveBG 60s ease infinite;
+  animation: MoveBG 60s ease infinite;
+  color: $white;
+}
+
+@-webkit-keyframes MoveBG {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@-moz-keyframes MoveBG {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@keyframes MoveBG {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+.move-bg {
+  -webkit-animation: MoveBG 23s ease infinite;
+  -moz-animation: MoveBG 23s ease infinite;
+  animation: MoveBG 23s ease infinite;
+}

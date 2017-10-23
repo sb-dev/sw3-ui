@@ -2,6 +2,10 @@
   padding: 0.625rem;
 }
 
+.padding-xl {
+  padding: 3.75rem;
+}
+
 .padding-h {
   padding-top: 0!important;
   padding-bottom: 0!important;
@@ -14,4 +18,22 @@
 
 .no-padding {
   padding: 0!important;
+}
+
+.no-padding-left {
+  padding-left: 0!important;
+}
+
+.no-padding-right {
+  padding-right: 0!important;
+}
+
+.margin-medium {
+  margin: 1.25rem;
+}
+
+.margin-top {
+  margin-right: 0;
+  margin-left: 0;
+  margin-bottom: 0;
 }
