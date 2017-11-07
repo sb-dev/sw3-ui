@@ -11,6 +11,10 @@
       a {
         color: $body-color;
         padding: 0 0.625rem;
+
+        &.nuxt-link-active {
+          color: $brand-primary;
+        }
       }
     }
   }
