@@ -4,7 +4,7 @@
       <div class="container--row">
         <el-row>
           <el-col :span="24">
-            <h1 class="super-size">Making Art Work</h1>
+            <h1 class="super-xl-text">Making Art Work</h1>
           </el-col>
         </el-row>
       </div>

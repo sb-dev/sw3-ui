@@ -1,5 +1,17 @@
+.padding-xs {
+  padding: 0.3125rem
+}
+
 .padding-sm {
   padding: 0.625rem;
+}
+
+.padding-md {
+  padding: 1.25rem
+}
+
+.padding-lg {
+  padding: 2.5rem;
 }
 
 .padding-xl {
@@ -28,12 +40,40 @@
   padding-right: 0!important;
 }
 
-.margin-medium {
+.no-padding-top {
+  padding-top: 0!important;
+}
+
+.margin-xs {
+  margin: 0.3125rem
+}
+
+.margin-sm {
+  margin: 0.625rem
+}
+
+.margin-md {
   margin: 1.25rem;
+}
+
+.margin-lg {
+  margin: 2.5rem
+}
+
+.margin-xl {
+  margin: 3.75rem
 }
 
 .margin-top {
   margin-right: 0;
   margin-left: 0;
   margin-bottom: 0;
+}
+
+.sw-line-height-md {
+  line-height: 1.2em
+}
+
+.sw-line-height-lg {
+  line-height: 1.4em
 }
