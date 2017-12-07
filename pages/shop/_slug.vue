@@ -1,40 +1,5 @@
 <template>
   <div class="artworks padding-lg padding-v">
-    <el-dialog :visible.sync="showArtworkDialog">
-      <el-row type="flex">
-        <el-col :span="14">
-          <el-carousel arrow="always" autoplay="false" indicator-position="none">
-            <el-carousel-item v-for="(item, index) in items" :key="item.index">
-              <img v-bind:src="item.image" class="image clickable">
-            </el-carousel-item>
-          </el-carousel>
-        </el-col>
-        <el-col :span="10">
-          <div class="content">
-            <div class="content__inner-container">
-              <div class="padding-sm no-padding-top">
-                <h2>Yummy hamburger</h2>
-                <p>Athletic Kicks</p>
-                <h3>by Mr.T</h3>
-                <p class="sw-bold">£200</p>
-                <el-row :gutter="20">
-                  <el-col :span="24" class="margin-sm margin-v">
-                    <el-button type="primary" size="large">Add to basket</el-button>
-                  </el-col>
-                  <el-col :span="12" class="margin-sm margin-v">
-                    <el-button>View full details</el-button>
-                  </el-col>
-                  <el-col :span="12" class="margin-sm margin-v">
-                    <el-button><i aria-hidden="true" class="fa fa-heart"></i></el-button>
-                  </el-col>
-                </el-row>
-              </div>
-            </div>
-          </div>
-        </el-col>
-      </el-row>
-    </el-dialog>
-
     <div class="container--row clearfix">
       <el-form :inline="true" :model="formInline" class="form-inline right">
         <el-form-item>
@@ -57,7 +22,9 @@
       <el-row :gutter="10">
         <el-col :span="6" v-for="(item, index) in items" :key="item.index">
           <el-card :body-style="{ padding: '0px' }" class="item margin-xs" >
-            <img v-on:click="openArtworkDialog" v-bind:src="item.image" class="image clickable">
+            <a v-bind:href="`#/quick-view/${item.slug}`" v-bind:title="artworkName">
+              <img v-bind:src="item.image" class="image clickable">
+            </a>
             <div class="padding-sm no-padding-top">
               <span class="sw-bold">Yummy hamburger</span> &middot; <span class="sm-text">by Mr.T</span>
               <br />
@@ -79,9 +46,11 @@
 
 <script>
   export default {
+    fetch ({ store, params }) {
+      console.log('params', params)
+    },
     data () {
       return {
-        showArtworkDialog: false,
         artworkName: 'Yummy hamburger',
         align: 'center',
         items: [
@@ -89,37 +58,43 @@
             index: 1,
             image: '/056A7345.jpg',
             height: 141,
-            width: 257
+            width: 257,
+            slug: 'Yummy-Hamburger'
           },
           {
             index: 2,
             image: '/056A7345.jpg',
             height: 141,
-            width: 257
+            width: 257,
+            slug: 'Yummy-Hamburger'
           },
           {
             index: 3,
             image: '/056A7345.jpg',
             height: 141,
-            width: 257
+            width: 257,
+            slug: 'Yummy-Hamburger'
           },
           {
             index: 4,
             image: '/056A7345.jpg',
             height: 141,
-            width: 257
+            width: 257,
+            slug: 'Yummy-Hamburger'
           },
           {
             index: 5,
             image: '/056A7345.jpg',
             height: 141,
-            width: 257
+            width: 257,
+            slug: 'Yummy-Hamburger'
           },
           {
             index: 6,
             image: '/056A7345.jpg',
             height: 141,
-            width: 257
+            width: 257,
+            slug: 'Yummy-Hamburger'
           }
         ],
         isBusy: false,
@@ -133,15 +108,14 @@
       onSubmit () {
         console.log('submit!')
       },
-      openArtworkDialog () {
-        this.showArtworkDialog = true
+      openProductDialog () {
+
       }
     }
   }
 </script>
 
 <style>
-
   .image{
     width: 100%;
   }
@@ -175,7 +149,12 @@
     vertical-align: top;
   }
 
-  .content .el-button {
+  .content .el-button:not(.el-button--text) {
     width: 100%;
+  }
+
+  .size {
+    width: 100%;
+    margin-bottom: 0.312rem;
   }
 </style>

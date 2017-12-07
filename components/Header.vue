@@ -16,9 +16,9 @@
           <li class="name"><nuxt-link to="/"><img src="~/assets/images/logo.png"></nuxt-link></li>
         </ul>
         <ul class="nav__section--left main-nav hidden-sm-down">
-          <li class="sw-bold"><nuxt-link to="/about">About</nuxt-link></li>
-          <li class="sw-bold"><nuxt-link to="/artists">Artists</nuxt-link></li>
-          <li class="sw-bold"><nuxt-link to="/artworks">Artworks</nuxt-link></li>
+          <li class="sw-bold"><nuxt-link to="/about/">About</nuxt-link></li>
+          <li class="sw-bold"><nuxt-link to="/artists/">Artists</nuxt-link></li>
+          <li class="sw-bold"><nuxt-link to="/shop/all-shoes/">Artworks</nuxt-link></li>
         </ul>
         <ul class="nav__section--right main-nav">
           <li class="hidden-sm-down" v-popover:basket-popper>
