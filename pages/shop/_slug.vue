@@ -138,23 +138,4 @@
   .clearfix:after {
     clear: both
   }
-
-  .content {
-    display: table;
-    height: 100%;
-  }
-
-  .content__inner-container {
-    display: table-cell;
-    vertical-align: top;
-  }
-
-  .content .el-button:not(.el-button--text) {
-    width: 100%;
-  }
-
-  .size {
-    width: 100%;
-    margin-bottom: 0.312rem;
-  }
 </style>

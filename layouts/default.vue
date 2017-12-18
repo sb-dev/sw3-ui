@@ -16,54 +16,8 @@
       <SwJoin></SwJoin>
     </el-dialog>
 
-    <el-dialog :visible.sync="showProductDialog" :before-close="clearHash">
-      <el-popover
-        ref="popover5"
-        placement="top"
-        width="280"
-        v-model="showSizePopover">
-        <el-row :gutter="5">
-          <el-col :span="12"><el-button class="size">UK 7.5</el-button></el-col>
-          <el-col :span="12"><el-button class="size">UK 8.5</el-button></el-col>
-          <el-col :span="12"><el-button class="size">UK 10.5</el-button></el-col>
-        </el-row>
-      </el-popover>
-      <el-row type="flex">
-        <el-col :span="14">
-          <el-carousel arrow="always" :autoplay="false" indicator-position="none">
-            <el-carousel-item v-for="(item, index) in items" :key="item.index">
-              <img v-bind:src="item.image" class="image clickable">
-            </el-carousel-item>
-          </el-carousel>
-        </el-col>
-        <el-col :span="10">
-          <div class="content">
-            <div class="content__inner-container">
-              <div class="padding-sm no-padding-top">
-                <h2>Yummy hamburger</h2>
-                <span>Athletic Kicks</span>
-                <h3>by Mr.T</h3>
-                <span class="sw-bold">
-                  <el-rate v-model="value5" disabled show-text text-color="#ff9900" text-template="({value})"></el-rate>
-                </span>
-                <h3 class="margin-sm margin-top">£200</h3>
-                <div class="size"><el-button type="text" v-popover:popover5>Choose Size <i class="fa fa-caret-down" aria-hidden="true"></i></el-button></div>
-                <el-row :gutter="20">
-                  <el-col :span="24" class="margin-sm margin-v">
-                    <el-button type="primary" size="large">Add to basket</el-button>
-                  </el-col>
-                  <el-col :span="12" class="margin-sm margin-v">
-                    <el-button>View full details</el-button>
-                  </el-col>
-                  <el-col :span="12" class="margin-sm margin-v">
-                    <el-button><i aria-hidden="true" class="fa fa-heart"></i></el-button>
-                  </el-col>
-                </el-row>
-              </div>
-            </div>
-          </div>
-        </el-col>
-      </el-row>
+    <el-dialog :visible.sync="showProductDialog" :before-close="clearHash" custom-class="product quick-view">
+      <SwProduct v-on:productDialog="closeProductDialog"></SwProduct>
     </el-dialog>
 
     <div class="sidenav"></div>
@@ -79,21 +33,26 @@
   import SwHeader from '~/components/Header.vue'
   import SwBasket from '~/components/Basket.vue'
   import SwJoin from '~/components/Join.vue'
+  import SwProduct from '~/components/Product.vue'
 
   export default {
     components: {
       SwHeader,
       SwBasket,
-      SwJoin
+      SwJoin,
+      SwProduct
+    },
+    head: {
+      bodyAttrs: {
+        class: 'sw'
+      }
     },
     data () {
       return {
-        value5: 127,
         showSidenav: false,
         showBasketDialog: false,
         showUserDialog: false,
         showProductDialog: false,
-        showSizePopover: false,
         items: [
           {
             index: 1,
@@ -137,17 +96,19 @@
     mounted: function () {
       if (typeof window !== 'undefined') {
         this.processHash()
-        window.addEventListener('hashchange', this.processHash.bind(this))
+        window.addEventListener('hashchange', this.processHash.bind(this), false)
       }
     },
     methods: {
       processHash () {
         if (location.hash.includes('quick-view')) {
           this.showProductDialog = true
+        } else {
+          this.showProductDialog = false
         }
       },
       clearHash (done) {
-        location.hash = ''
+        location.hash = '#'
         done()
       },
       openSidenav () {
@@ -158,6 +119,9 @@
       },
       openUserDialog () {
         this.showUserDialog = true
+      },
+      closeProductDialog () {
+        this.showProductDialog = false
       }
     }
   }
@@ -225,5 +189,15 @@
     position: relative;
     transition: margin-left .5s;
     width: 100%;
+  }
+
+  .right {
+    float: right;
+  }
+
+  .size-switch {
+    width: 58px;
+    margin: 4px auto;
+    display: block;
   }
 </style>

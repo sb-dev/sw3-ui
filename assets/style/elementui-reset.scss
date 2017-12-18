@@ -1,0 +1,16 @@
+.el-button.el-button--text {
+  color: $brand-secondary;
+}
+
+.sw .el-button:focus, .sw .el-button:hover {
+  color: $brand-secondary;
+  border-color: $brand-secondary;
+}
+
+.sw .el-select .el-input__inner:focus {
+  border-color: $brand-secondary;
+}
+
+.sw .el-input__inner:focus {
+  border-color: $brand-secondary;
+}
